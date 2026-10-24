@@ -3,7 +3,7 @@
 
 Requisitos mínimos para considerarlo completo:
 
-- Crear una clase BankAccount.
+- Crear una clase BankAccountModel.
 - Permitir depósitos y extracciones.
 - Validar que no se pueda retirar más dinero del disponible.
 - Mostrar saldo actual.

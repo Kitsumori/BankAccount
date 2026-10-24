@@ -1,4 +1,4 @@
-using BankAccount.Repository;
+using BankAccount.Repositories;
 using BankAccount.Helpers;
 using BankAccount.Models;
 
@@ -15,10 +15,11 @@ public class BankAccountService(BankAccountRepository repository)
 
     public List<BankAccountModel> GetAllAccounts() => _repository.GetAll();
 
-    public BankAccountModel? GetAccountByNumber(string accountNumber) => _repository.GetAccountByNumber(accountNumber);
+    public BankAccountModel GetAccountByNumber(string accountNumber) => 
+        _repository.GetAccountByNumber(accountNumber) ?? throw new ArgumentException("Account not found");
 
-    public BankAccountModel? GetAccountByNameAndDni(string accountHolderName, string dni) => 
-        _repository.GetAccountByNameAndDni(accountHolderName, dni);
+    public BankAccountModel GetAccountByNameAndDni(string accountHolderName, string dni) => 
+        _repository.GetAccountByNameAndDni(accountHolderName, dni) ?? throw new ArgumentException("Account not found");
     
     public void Deposit(string accountNumber, decimal amount)
     {

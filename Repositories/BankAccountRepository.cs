@@ -1,7 +1,7 @@
 using BankAccount.Models;
 using BankAccount.Helpers;
 
-namespace BankAccount.Repository;
+namespace BankAccount.Repositories;
 public class BankAccountRepository
 {
     private readonly List<BankAccountModel> _accounts = DbFileHelper.LoadFromFile();

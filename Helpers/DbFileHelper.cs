@@ -18,7 +18,7 @@ public static class DbFileHelper
 
     public static List<BankAccountModel> LoadFromFile()
     {
-        if (!File.Exists(_filePath))
+        if (File.Exists(_filePath))
         {
             var json = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<List<BankAccountModel>>(json) ?? [];
